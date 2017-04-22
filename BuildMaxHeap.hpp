@@ -26,3 +26,17 @@ void AdjustDown(WlemType A[],int k,int len)
 	}
 	A[k]=A[0];
 }
+
+void AdjustUp(ElemType A[],int k)
+{
+	A[0]=A[k];
+	int i=k/2;
+	while(i>0&&A[k]>A[i])
+	{
+		k=i;
+		A[k]=A[i];
+		i=k/2;
+	}
+	A[k]=A[0];
+
+}
