@@ -7,71 +7,85 @@
    heapSize is the size of A
 */
 
-
 //@brief：max-heapify
 //prerequisite:i的左右孩子已经是最大子堆的根结点
 
+int A[] = {};
+
+int i;
 
 //pseudo-code,recursive
-max-heapify(A,i){
-//l and r are indexes
-l=Left(i);
-r=Right(i);
-largest=-INT_MAX;
-if l<=heapSize and A[l]<A[i]
-largest=i;
-else
-	largest=l;
+void max_heapify(A, i)
+{
+	//l and r are indexes
+	l = Left(i);
+	r = Right(i);
+	largest = -INT_MAX;
+	if (l <= heapSize and A[l] < A[i])
+	{
+		largest = i;
+	}
+	else
+	{
+		largest = l;
+	}
 
-if r<=heapSize and A[r]<A[largest]
-else
-	largest=r;
+	if (r <= heapSize and A[r] < A[largest])
+	{
+	}
+	else
+	{
+		largest = r;
+	}
 
-if largest!=i
-	exchange A[i] with A[largest]
-	max-heapify(A,largest)
+	if (largest != i)
+	{
+		exchange A[i] with A[largest];
+		max_heapify(A, largest);
+	}
 }
 
 //pseudo-code,loop
-max-heapify(A,i){
-larger=i
-while(larger<=heapSize){
-l=Left(i);
-r=Right(i);
+max_heapify(A, i)
+{
+	larger = i;
+	while (larger <= heapSize)
+	{
+		l = Left(i);
+		r = Right(i);
 
-if l<=heapSize and A[l]<A[i]
-	larger=i;
-else
-	larger=l;
+		if (l <= heapSize and A[l] < A[i])
+		{
+			larger = i;
+		}
+		else
+			larger = l;
 
-if r<=heapSize and A[r]<A[larger]
-else
-	larger=r;
+		if (r <= heapSize and A[r] < A[larger])
+		{
+		}
+		else
+			larger = r;
 
-if larger!=i
-	exchange A[i] with A[larger]
-	larger=i
+		if (larger != i)
+		{
+
+			exchange A[i] with A[larger];
+			larger = i
+		}
+	}
 }
-
-}
-
 
 //rust impl
 
-
-
-
-
-
 //@brief:build-max-heap
 
-
 //pseudo-code
-build-max-heap(A){
-heapSize=A.length;
-for i in floor(heapSize/2) ... 1
-	max-heapify(A,i)
+build_max_heap(A)
+{
+	heapSize = A.length;
+	for (i in floor(heapSize / 2)... 1)
+	{
+		max - heapify(A, i);
+	}
 }
-
-
-
