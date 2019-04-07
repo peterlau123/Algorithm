@@ -1,7 +1,0 @@
-[package]
-name = "heap"
-version = "0.1.0"
-authors = ["liuxin <freelaupeter@gmail.com>"]
-edition = "2018"
-
-[dependencies]
