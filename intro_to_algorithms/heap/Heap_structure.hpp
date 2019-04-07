@@ -8,20 +8,20 @@
 */
 
 //@brief：max-heapify
-//prerequisite:i的左右孩子已经是最大子堆的根结点
+// prerequisite:i的左右孩子已经是最大子堆的根结点
 
-int A[] = {};
+int A[4] = {4, 3, 2, 1};
+int parent[] = {-1, 4, 4, 3};
+int heapSize = 4;
 
-int i;
-
-//pseudo-code,recursive
-void max_heapify(A, i)
+// pseudo-code,recursive
+void max_heapify(int A[], int i)
 {
-	//l and r are indexes
-	l = Left(i);
-	r = Right(i);
-	largest = -INT_MAX;
-	if (l <= heapSize and A[l] < A[i])
+	// l and r are indexes
+	int l = Left(i);
+	int r = Right(i);
+	int largest;
+	if (l <= heapSize && A[l] < A[i])
 	{
 		largest = i;
 	}
@@ -30,7 +30,7 @@ void max_heapify(A, i)
 		largest = l;
 	}
 
-	if (r <= heapSize and A[r] < A[largest])
+	if (r <= heapSize && A[r] < A[largest])
 	{
 	}
 	else
@@ -40,19 +40,19 @@ void max_heapify(A, i)
 
 	if (largest != i)
 	{
-		exchange A[i] with A[largest];
+		// exchange A[i] with A[largest];
 		max_heapify(A, largest);
 	}
 }
 
-//pseudo-code,loop
-max_heapify(A, i)
+// pseudo-code,loop
+void max_heapify_2(int A[], int i)
 {
-	larger = i;
+	int larger = i;
 	while (larger <= heapSize)
 	{
-		l = Left(i);
-		r = Right(i);
+		int l = Left(i);
+		int r = Right(i);
 
 		if (l <= heapSize and A[l] < A[i])
 		{
@@ -69,18 +69,17 @@ max_heapify(A, i)
 
 		if (larger != i)
 		{
-
-			exchange A[i] with A[larger];
+			// exchange A[i] with A[larger];
 			larger = i
 		}
 	}
 }
 
-//rust impl
+// rust impl
 
 //@brief:build-max-heap
 
-//pseudo-code
+// pseudo-code
 build_max_heap(A)
 {
 	heapSize = A.length;
