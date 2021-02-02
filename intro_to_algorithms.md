@@ -4,9 +4,5 @@
 
 ### 1.1 Heap
 
-
-
 ### 1.2 Stack,Queue and Linked List
-
-
 
